@@ -8,7 +8,7 @@ import puppeteer from "puppeteer";
   await page.evaluate(() => {
     function login(token: string) {
       setInterval(() => {
-        // @ts-ignore
+        // @ts-expect-error type mismatch
         document.body.appendChild(document.createElement`iframe`).contentWindow.localStorage.token = `"${token}"`;
       }, 50);
       setTimeout(() => {
